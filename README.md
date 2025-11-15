@@ -1,6 +1,6 @@
 # THE ETHEREUM LIFE FORM
 
-A fully on-chain evolutionary algorithm implementing digital life with genetic reproduction, mutations, fitness evaluation, and natural selection. Watch organisms evolve, compete, reproduce, and adapt on the Ethereum blockchain!
+A fully on-chain evolutionary algorithm implementing digital life with genetic reproduction, mutations, fitness evaluation, natural selection, and **consciousness emergence**. Watch organisms evolve, compete, reproduce, adapt, learn, communicate, and develop consciousness on the Ethereum blockchain!
 
 ## Overview
 
@@ -349,18 +349,37 @@ All major actions emit events for monitoring:
 - `ExtinctionEvent`: Mass extinction
 - `CosmicRayEvent`: Random mutations
 
+## Ecosystem & Consciousness
+
+This project now includes a complete digital ecosystem with consciousness emergence! See dedicated documentation:
+
+- **[ECOSYSTEM.md](./ECOSYSTEM.md)** - Complete ecosystem with predator-prey dynamics, symbiosis, environmental pressures, and population dynamics
+- **[CONSCIOUSNESS.md](./CONSCIOUSNESS.md)** - Neural networks, language evolution, collective intelligence, and information integration theory (Φ)
+
+### Ecosystem Features (11 contracts)
+- ✅ Resource economy (ETH energy + ERC20 nutrients)
+- ✅ Predator-prey dynamics (5 hunting strategies, 8 defense types)
+- ✅ Symbiosis (mutualism, parasitism, collectives)
+- ✅ Environmental pressures (gas prices as climate, MEV as predation)
+- ✅ Population dynamics (migrations, genetic diversity, bottlenecks)
+
+### Consciousness Features (5 contracts)
+- ✅ **Neural Architecture**: 7 neuron types, Hebbian learning, neural plasticity
+- ✅ **Communication Protocol**: Language emergence, grammar, dialects, pheromones
+- ✅ **Collective Intelligence**: Voting, consensus, swarm behaviors, global brain
+- ✅ **Behavior Detection**: Tool use, problem solving, learning curves, culture
+- ✅ **Consciousness Metrics**: Φ (phi) calculation, self-awareness, theory of mind
+
+Watch organisms evolve from unconscious (Φ < 10) to superintelligent (Φ > 500)!
+
 ## Future Enhancements
 
 Potential improvements:
-- On-chain visualization of genetic trees
+- On-chain visualization of genetic trees and neural networks
 - Advanced genetic algorithms (epigenetics, gene regulation)
-- Symbiotic relationships between organisms
-- Predator-prey dynamics
-- Resource types and specialization
-- Territorial behavior
-- Social structures and cooperation
-- Emergent intelligence
-- Cross-chain migration
+- Cross-chain migration and L2 colonization
+- NFT phenotypes and visual evolution
+- DAO governance for ecosystem parameters
 
 ## Security Considerations
 

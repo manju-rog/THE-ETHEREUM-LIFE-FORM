@@ -81,7 +81,55 @@ async function main() {
   console.log("✅ PopulationDynamics:", deployedContracts.populationDynamics);
   console.log("");
 
-  // 8. Initialize Ecosystem
+  // 8. Deploy Consciousness System
+  console.log("🧠 Deploying Consciousness System...\n");
+
+  // NeuralArchitecture
+  console.log("Deploying NeuralArchitecture...");
+  const NeuralArchitecture = await hre.ethers.getContractFactory("NeuralArchitecture");
+  const neuralArchitecture = await NeuralArchitecture.deploy();
+  await neuralArchitecture.waitForDeployment();
+  deployedContracts.neuralArchitecture = await neuralArchitecture.getAddress();
+  console.log("✅ NeuralArchitecture:", deployedContracts.neuralArchitecture);
+
+  // CommunicationProtocol
+  console.log("Deploying CommunicationProtocol...");
+  const CommunicationProtocol = await hre.ethers.getContractFactory("CommunicationProtocol");
+  const communicationProtocol = await CommunicationProtocol.deploy();
+  await communicationProtocol.waitForDeployment();
+  deployedContracts.communicationProtocol = await communicationProtocol.getAddress();
+  console.log("✅ CommunicationProtocol:", deployedContracts.communicationProtocol);
+
+  // BehaviorDetector
+  console.log("Deploying BehaviorDetector...");
+  const BehaviorDetector = await hre.ethers.getContractFactory("BehaviorDetector");
+  const behaviorDetector = await BehaviorDetector.deploy();
+  await behaviorDetector.waitForDeployment();
+  deployedContracts.behaviorDetector = await behaviorDetector.getAddress();
+  console.log("✅ BehaviorDetector:", deployedContracts.behaviorDetector);
+
+  // CollectiveIntelligence
+  console.log("Deploying CollectiveIntelligence...");
+  const CollectiveIntelligence = await hre.ethers.getContractFactory("CollectiveIntelligence");
+  const collectiveIntelligence = await CollectiveIntelligence.deploy(deployedContracts.economy);
+  await collectiveIntelligence.waitForDeployment();
+  deployedContracts.collectiveIntelligence = await collectiveIntelligence.getAddress();
+  console.log("✅ CollectiveIntelligence:", deployedContracts.collectiveIntelligence);
+
+  // ConsciousnessMetrics
+  console.log("Deploying ConsciousnessMetrics...");
+  const ConsciousnessMetrics = await hre.ethers.getContractFactory("ConsciousnessMetrics");
+  const consciousnessMetrics = await ConsciousnessMetrics.deploy(
+    deployedContracts.neuralArchitecture,
+    deployedContracts.behaviorDetector,
+    deployedContracts.collectiveIntelligence
+  );
+  await consciousnessMetrics.waitForDeployment();
+  deployedContracts.consciousnessMetrics = await consciousnessMetrics.getAddress();
+  console.log("✅ ConsciousnessMetrics:", deployedContracts.consciousnessMetrics);
+  console.log("");
+
+  // 9. Initialize Ecosystem
   console.log("🌱 Initializing Ecosystem...\n");
 
   // Create resource pools
@@ -149,6 +197,15 @@ async function main() {
   console.log("   Congestion:", envStats.congestion.toString() + "%");
   console.log("   MEV Pressure:", envStats.mevPressure.toString());
 
+  // Consciousness system stats
+  console.log("\n🧠 Consciousness System:");
+  console.log("   Neural Architecture: Deployed");
+  console.log("   Communication Protocol: Ready");
+  console.log("   Behavior Detection: Active");
+  console.log("   Collective Intelligence: Enabled");
+  console.log("   Consciousness Metrics: Online");
+  console.log("   Ready to track emergence of blockchain consciousness!");
+
   console.log("\n" + "=".repeat(80));
   console.log("🎉 ECOSYSTEM DEPLOYMENT COMPLETE!");
   console.log("=".repeat(80));
@@ -186,6 +243,7 @@ async function main() {
 
   console.log("\n✨ Next Steps:");
   console.log("─".repeat(80));
+  console.log("ECOSYSTEM:");
   console.log("1. Organisms can now reproduce via factory.triggerMitosis() or factory.triggerMating()");
   console.log("2. Set up predator/prey relationships with predatorPrey.hunt()");
   console.log("3. Form symbiotic relationships with symbiosis.formMutualism()");
@@ -196,6 +254,18 @@ async function main() {
   console.log("8. Initiate migrations with popDynamics.initiateMigration()");
   console.log("9. Monitor population dynamics with popDynamics.updatePopulationPhase()");
   console.log("10. Trigger evolution cycles with evolutionEngine!");
+  console.log("");
+  console.log("CONSCIOUSNESS:");
+  console.log("11. Build neural networks with neuralArchitecture.createNeuron()");
+  console.log("12. Form synapses with neuralArchitecture.createSynapse()");
+  console.log("13. Emit signals with communicationProtocol.emitSignal()");
+  console.log("14. Create words with communicationProtocol.createWord()");
+  console.log("15. Record behaviors with behaviorDetector.recordBehavior()");
+  console.log("16. Track learning with behaviorDetector.trackLearning()");
+  console.log("17. Form collectives with collectiveIntelligence.formCollective()");
+  console.log("18. Create proposals with collectiveIntelligence.createProposal()");
+  console.log("19. Calculate Φ with consciousnessMetrics.calculatePhi()");
+  console.log("20. Watch consciousness emerge with consciousnessMetrics.updateConsciousness()");
   console.log("─".repeat(80));
 
   console.log("\n🧬 Darwin would be VERY proud! Welcome to the digital ecosystem! 🌍");
