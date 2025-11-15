@@ -1,0 +1,37 @@
+{
+  "name": "the-ethereum-life-form",
+  "version": "1.0.0",
+  "description": "On-chain evolutionary algorithm with genetic reproduction, mutations, fitness evaluation, and natural selection",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "test:verbose": "hardhat test --verbose",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js",
+    "deploy:localhost": "hardhat run scripts/deploy.js --network localhost",
+    "node": "hardhat node",
+    "clean": "hardhat clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:44095/git/manju-rog/THE-ETHEREUM-LIFE-FORM"
+  },
+  "keywords": [
+    "ethereum",
+    "evolution",
+    "genetic-algorithm",
+    "smart-contracts",
+    "on-chain",
+    "artificial-life",
+    "natural-selection",
+    "reproduction",
+    "fitness",
+    "mutations"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.27.0"
+  }
+}
