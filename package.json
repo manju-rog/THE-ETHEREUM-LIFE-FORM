@@ -9,6 +9,8 @@
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.js",
     "deploy:localhost": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:ecosystem": "hardhat run scripts/deploy-ecosystem.js",
+    "deploy:ecosystem:localhost": "hardhat run scripts/deploy-ecosystem.js --network localhost",
     "node": "hardhat node",
     "clean": "hardhat clean"
   },
@@ -26,12 +28,20 @@
     "natural-selection",
     "reproduction",
     "fitness",
-    "mutations"
+    "mutations",
+    "ecosystem",
+    "predator-prey",
+    "symbiosis",
+    "trophic-levels",
+    "resource-economy"
   ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
     "hardhat": "^2.27.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0"
   }
 }
