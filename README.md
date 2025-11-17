@@ -12,6 +12,58 @@ This project implements Darwin's principles of evolution on-chain:
 - **Natural Selection**: Survival of the fittest through resource competition, environmental pressures, and extinction events
 - **Evolution Triggers**: Time-based, resource-based, population-based, and random cosmic ray events
 
+## Getting Started
+
+**📖 NEW USERS START HERE:** See **[HOW_TO_USE.md](./HOW_TO_USE.md)** for comprehensive setup, deployment, and usage instructions (1000+ lines of detailed documentation).
+
+### Documentation
+
+Complete documentation for all features:
+
+- **[HOW_TO_USE.md](./HOW_TO_USE.md)** - Complete setup and usage guide (START HERE!)
+- **[INTERACTION_GUIDE.md](./INTERACTION_GUIDE.md)** - Breeding lab, marketplace, and god mode features
+- **[ECOSYSTEM.md](./ECOSYSTEM.md)** - Digital ecosystem with predator-prey dynamics and symbiosis
+- **[CONSCIOUSNESS.md](./CONSCIOUSNESS.md)** - Neural networks, language, and consciousness emergence
+- **[README.md](./README.md)** - This file (architecture overview)
+
+## Safety & Error Handling
+
+This project includes comprehensive safety infrastructure for production use:
+
+### ErrorHandler.sol
+Centralized error handling with gas-efficient custom errors:
+- **Access Control Errors**: Unauthorized, NotOwner, NotGod
+- **Payment Errors**: InsufficientPayment, PaymentFailed
+- **State Errors**: ContractPaused, InvalidState
+- **Organism Errors**: OrganismNotFound, OrganismDead, InsufficientEnergy
+- **Marketplace Errors**: ListingNotFound, ListingExpired, AlreadySold
+- **Breeding Errors**: BreedingFailed, IncompatibleGenetics, CRISPRFailed
+- **Comprehensive Event Logging**: All errors logged with timestamps and context
+
+### SafetyManager.sol
+Multi-layered safety mechanisms:
+- **Access Control**: Owner and admin role management
+- **Pausable Pattern**: Emergency pause/unpause functionality
+- **Emergency Stop**: Nuclear option for critical situations
+- **Rate Limiting**: Cooldown periods to prevent spam (e.g., 1 hour for breeding)
+- **Spending Limits**: Daily spend caps (default: 1000 ETH)
+- **Circuit Breaker**: Auto-pause after 10 consecutive failures
+- **Emergency Recovery**: Fund recovery in case of critical issues
+- **Fallback Protection**: Proper handling of unknown function calls and ETH transfers
+
+### Safe Deployment
+
+Use `scripts/deploy-with-safety.js` for production deployments:
+- Try-catch blocks for error recovery
+- Partial deployment tracking
+- Automatic safety configuration
+- Genesis organism creation
+- Comprehensive logging and error reporting
+
+```bash
+npx hardhat run scripts/deploy-with-safety.js --network sepolia
+```
+
 ## Architecture
 
 ### Core Contracts
@@ -60,6 +112,65 @@ Ecosystem management interface:
 - Ecosystem statistics
 - Competition tournaments
 - Batch operations
+
+### Interaction Contracts
+
+#### 6. **BreedingLaboratory.sol**
+Advanced genetic engineering and selective breeding:
+- Selective breeding (10 ETH) - Choose best traits
+- CRISPR gene editing (50 ETH) - Direct DNA modification with 70-100% success rate
+- Gene splicing (30 ETH) - Combine specific gene sequences
+- Cloning (100 ETH) - Perfect copies with 95-100% fidelity
+- Hybrid creation (75 ETH) - Cross-species breeding
+- Mutation inducement (20 ETH/mutation) - Force mutations
+- Evolution acceleration (5 ETH/generation) - Skip generations
+- Breeding projects - Long-term genetic programs
+- Designer organisms - Bounty system for specific traits
+
+#### 7. **OrganismMarketplace.sol**
+Complete marketplace for digital organisms:
+- Fixed-price listings with 5% marketplace fee
+- Auction system with automatic bidding
+- Breeding rights rental - Rent organisms for breeding
+- Genetic patents - License unique genes with royalties
+- Species collections - Bundle multiple organisms
+- Custom orders - Commission specific traits with bounties
+- Rare mutations - Trade unique genetic variants
+- Champion bloodlines - Proven winners marketplace
+
+#### 8. **GodMode.sol**
+Divine environmental manipulation (admin powers):
+- **Resource Injection** (1 ETH) - Add resources to ecosystem
+- **Catastrophes** (10 ETH) - Trigger 10 disaster types (meteor, ice age, volcanic eruption, etc.)
+- **Selective Pressure** (5 ETH) - Favor/disfavor specific traits
+- **Environment Changes** (3 ETH) - Alter ecosystem parameters
+- **Predator Spawning** (7 ETH) - Introduce predators
+- **Disease Outbreaks** (8 ETH) - Cause plagues
+- **Miracles** (2 ETH) - Bless specific organisms
+- **Time Acceleration** (15 ETH) - Speed up evolution (1x-1000x)
+- **Reality Warping** (50 ETH) - Change physics constants
+- **Mass Extinction** (100 ETH) - Nuclear option (0% survival)
+
+### Safety Contracts
+
+#### 9. **ErrorHandler.sol**
+Centralized error handling and logging:
+- Gas-efficient custom errors (Solidity 0.8.4+)
+- Comprehensive error definitions for all failure modes
+- Event-based error logging with timestamps
+- Error categorization: Access, Payment, State, Organism, Marketplace, Breeding, God Mode
+- Error analytics and monitoring support
+
+#### 10. **SafetyManager.sol**
+Multi-layered safety mechanisms:
+- Role-based access control (owner, admin)
+- Pausable pattern with emergency stop
+- Rate limiting with configurable cooldowns
+- Daily spending limits (default: 1000 ETH)
+- Circuit breaker (auto-pause after 10 failures)
+- Emergency fund recovery
+- Fallback and receive functions for ETH handling
+- Comprehensive safety event logging
 
 ## Features
 
@@ -383,11 +494,25 @@ Potential improvements:
 
 ## Security Considerations
 
+### Built-in Safety Features
+
+- **ErrorHandler**: Gas-efficient custom errors with comprehensive logging
+- **SafetyManager**: Multi-layered safety with access control, pausable pattern, and emergency stop
+- **Rate Limiting**: Cooldown periods prevent spam (e.g., 1 hour for breeding, 30 min for CRISPR)
+- **Spending Limits**: Daily caps prevent excessive spending (default: 1000 ETH)
+- **Circuit Breaker**: Auto-pause after 10 consecutive failures
+- **Emergency Recovery**: Fund recovery in critical situations
+- **Fallback Protection**: Proper handling of unknown calls and ETH transfers
+
+### Core Security
+
 - All reproduction requires sufficient energy
 - Population cap prevents DoS through over-population
 - Genetic compatibility checks prevent invalid offspring
-- Access controls on admin functions
+- Role-based access controls (owner, admin, god)
 - No external dependencies (fully on-chain)
+- Comprehensive event logging for monitoring
+- Try-catch error recovery in deployment scripts
 
 ## License
 
